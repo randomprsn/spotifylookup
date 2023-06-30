@@ -3,6 +3,7 @@ import os
 import base64
 from requests import post, get
 import json
+from ui import create_ui
 
 load_dotenv()
 
@@ -52,6 +53,11 @@ def get_songs_by_artist(token, artist_id):
 
 token = get_token()
 
+create_ui(token, search_for_artist, get_songs_by_artist)
+
+
+
+'''
 artist_name = input("Gimme name: ")
 
 result = search_for_artist(token, artist_name)
@@ -62,3 +68,5 @@ for idx, song in enumerate(songs):
     print(f"{idx + 1}. {song['name']}")
 
 input("Press Enter to exit...")
+
+'''
